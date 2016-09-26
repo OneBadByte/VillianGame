@@ -116,6 +116,41 @@ public:
 
     }
 
+    void menu(){
+
+        char input;
+        clearScreen();
+        std::cout << readFile("TextFiles/menu.txt") << std::endl;
+        std::cin >> input;
+        if(input == 'n' || input == 'N'){
+
+            std::cout << "Player selected continue" << std::endl;
+
+
+        }else if(input == 'c'||input == 'C'){
+
+
+            std::cout << "Player selected new" << std::endl;
+
+
+        }else if(input == 'm' || input == 'M'){
+
+
+            std::cout << "Player selected maker" << std::endl;
+
+        }else{
+
+            menu();
+
+
+
+        }
+
+
+    }
+
+
+
 
     void outro(){
 
@@ -154,6 +189,8 @@ int main() {
                 tools.clearScreen();
                 tools.intro();
                 tools.wait(2);
+                tools.menu();
+
                 tools.clearScreen();
                 tools.outro();
                 break;
